@@ -96,7 +96,7 @@
             font-size: 1.5em;
             letter-spacing: 1px;
         }
-        
+
         .minecrafttop {
             font-family: 'Minecraft', sans-serif;
             color: #FFFFFF;
@@ -104,7 +104,6 @@
             letter-spacing: 1px;
             margin-bottom: 30px;
         }
-
     </style>
 </head>
 <body>
@@ -115,8 +114,7 @@
         <div id="result"></div>
     </div>
 
-    <script>
-        function checkCode() {
+    <script>function checkCode() {
             const input = document.getElementById("codeInput").value.trim().toLowerCase();
             const resultBox = document.getElementById("result");
 
@@ -152,6 +150,15 @@
                 typeText("jack");
             }
 
+            else if (!isNaN(input) && Number(input) < 2025 && input != "2011") {
+                typeText("past");
+            }
+
+            else if (!isNaN(input) && Number(input) > 2025) {
+                typeText("future");
+            }
+
+
             else if (input === "victim 4") {
                 typeText("daniel");
             }
@@ -178,6 +185,13 @@
 
             else if (input === "456" || input === "witherstorm456") {
                 typeText("violent entity");
+            }
+
+            else if (input === "big_silly" || input === "whuter") {
+                typeText("theorist");
+                setTimeout(() => {
+                    typeText("a pretty good one too, shout out to " + input)
+                }, 2000);
             }
 
             else if (input === "home") {
@@ -344,8 +358,6 @@
                 i++;
                 if (i >= text.length) clearInterval(interval);
             }, 50);
-        }
-
-    </script>
+        }</script>
 </body>
 </html>
