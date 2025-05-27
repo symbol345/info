@@ -96,11 +96,19 @@
             font-size: 1.5em;
             letter-spacing: 1px;
         }
+        
+        .minecrafttop {
+            font-family: 'Minecraft', sans-serif;
+            color: #FFFFFF;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
 
     </style>
 </head>
 <body>
-
+    <div class="minecrafttop">type in anything</div>
     <div id="container">
         <input type="text" id="codeInput" placeholder="">
         <button onclick="checkCode()">Enter</button>
@@ -118,6 +126,10 @@
 
             else if (input === "jack") {
                 typeText("345's name");
+            }
+
+            else if (input === "anything") {
+                typeText("Ha, very funny.");
             }
 
             else if (input === "daniel") {
