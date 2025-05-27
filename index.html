@@ -236,6 +236,20 @@
                 typeText("entity species");
             }
 
+            else if (input === "solitarians") {
+                typeText("heart, spade, diamond, clover");
+            }
+
+            else if (input === "symbols" || input === "symbolfolk" || input === "symbol") {
+                const randomNum = Math.floor(Math.random() * 2);
+                if (randomNum === 0) {
+                    typeText("delri, x, divine x, check, quaternion, star, inf");
+                }
+                else {
+                    typeText("⨌, ⨷, ⨱, ✓, ⨖, ⁜, ∞");
+                }
+            }
+
             else if (input === "universes colliding") {
                 typeText("theory");
             }
