@@ -237,7 +237,13 @@
             }
 
             else if (input === "solitarians") {
-                typeText("heart, spade, diamond, clover");
+                const randomNum = Math.floor(Math.random() * 2);
+                if (randomNum === 0) {
+                    typeText("heart, diamond, spade, clover");
+                }
+                else {
+                    typeText("♥, ♦, ♠, ♣");
+                }
             }
 
             else if (input === "symbols" || input === "symbolfolk" || input === "symbol") {
