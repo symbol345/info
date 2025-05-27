@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>info</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 1em;
+            width: 250px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #1f1f1f;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #bfbfbf;
+        }
+
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 0 red, -2px 0 cyan;
+                transform: translate(0);
+            }
+
+            20% {
+                text-shadow: -2px 0 red, 2px 0 cyan;
+                transform: translate(-2px, 2px);
+            }
+
+            40% {
+                text-shadow: 2px 0 red, -2px 0 cyan;
+                transform: translate(-2px, -2px);
+            }
+
+            60% {
+                text-shadow: -2px 0 red, 2px 0 cyan;
+                transform: translate(2px, 2px);
+            }
+
+            80% {
+                text-shadow: 2px 0 red, -2px 0 cyan;
+                transform: translate(2px, -2px);
+            }
+
+            100% {
+                text-shadow: -2px 0 red, 2px 0 cyan;
+                transform: translate(0);
+            }
+        }
+
+        .glitch-text {
+            animation: glitch 0.3s infinite;
+            font-weight: bold;
+            color: white;
+            user-select: none;
+        }
+
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('fonts/3_Minecraft-Bold.otf') format('opentype');
+        }
+
+        .minecraft {
+            font-family: 'Minecraft', sans-serif;
+            color: #ff0000;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="container">
+        <input type="text" id="codeInput" placeholder="">
+        <button onclick="checkCode()">Enter</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function checkCode() {
+            const input = document.getElementById("codeInput").value.trim().toLowerCase();
+            const resultBox = document.getElementById("result");
+
+            if (input === "wither" || input === "witherstorm345" || input === "345" || input === "witherstorm") {
+                typeText("3rd victim");
+            }
+
+            else if (input === "jack") {
+                typeText("345's name");
+            }
+
+            else if (input === "daniel") {
+                typeText("Z2-JJI_rdzs");
+            }
+
+            else if (input === "rebecca" || input === "joshua" || input === "olivia" || input === "paul" || input === "noah" || input === "james" || input === "john") {
+                typeText("unknown");
+            }
+
+            else if (input === "victim 1") {
+                typeText("rebecca");
+            }
+
+            else if (input === "victim 2") {
+                typeText("joshua");
+            }
+
+            else if (input === "victim 3") {
+                typeText("jack");
+            }
+
+            else if (input === "victim 4") {
+                typeText("daniel");
+            }
+
+            else if (input === "victim 5") {
+                typeText("olivia");
+            }
+
+            else if (input === "victim 6") {
+                typeText("paul");
+            }
+
+            else if (input === "victim 7") {
+                typeText("noah");
+            }
+
+            else if (input === "victim 8") {
+                typeText("james");
+            }
+
+            else if (input === "victim 9") {
+                typeText("john");
+            }
+
+            else if (input === "456" || input === "witherstorm456") {
+                typeText("violent entity");
+            }
+
+            else if (input === "home") {
+                typeText("nevada");
+            }
+
+            else if (input === "hishell") {
+                typeText("345's prison");
+            }
+
+            else if (input === "clue" || input === "hint") {
+                typeText("file");
+            }
+
+            else if (input === "file" || input === "files" || input === "zip" || input === "codes" || input === "folder") {
+                typeText("https://drive.google.com/file/d/1-VGj0Xe9vDdUQKJJAxzJbO1BbhEOftuO/view");
+            }
+
+            else if (input === "time") {
+                typeText("frozen");
+            }
+
+            else if (input === "456's victims") {
+                typeText("9");
+            }
+
+            else if (input === "2011") {
+                typeText("time paradox", "glitch-text");
+            }
+
+            else if (input === "2025") {
+                typeText("correct timeline");
+            }
+
+            else if (input === "delri") {
+                typeText("creator");
+            }
+
+            else if (input === "solitarian") {
+                typeText("entity species");
+            }
+
+            else if (input === "universes colliding") {
+                typeText("theory");
+            }
+
+            else if (input === "anomaly") {
+                resultBox.innerHTML = `<img src="portals.png" style="width: 300px; border-radius: 10px;">`;
+                setTimeout(() => {
+                    const randomNum = Math.floor(Math.random() * 2);
+                    if (randomNum === 0) {
+                        typeText("the hallways");
+                    }
+                    else {
+                        typeText("the chambers");
+                    }
+                }, 2000); // 2 sec delay
+            }
+
+            else if (input === "diorite" || input === "infection") {
+                const randomNum = Math.floor(Math.random() * 2);
+                if (randomNum === 0) {
+                    typeText("anomaly");
+                }
+                else {
+                    typeText("virus");
+                }
+            }
+
+            else if (input === "sbeve396" || input === "sbeve" || input === "396") {
+                typeText("DO NOT", "minecraft");
+            }
+
+            else if (input === "qsc98" || input === "qsc" || input === "98" || input === "q") {
+                typeText("Not helpful", "minecraft");
+            }
+
+            else {
+                typeText("incorrect input. try looking for clues");
+            }
+        }
+
+        function typeText(text, ...cssClasses) {
+            const resultBox = document.getElementById("result");
+            let i = 0;
+            resultBox.innerHTML = `<span id="typingText" class="${cssClasses.join(' ')}"></span>`;
+            const span = document.getElementById("typingText");
+
+            let interval = setInterval(() => {
+                span.innerHTML += text[i];
+                i++;
+                if (i >= text.length) clearInterval(interval);
+            }, 50);
+        }
+
+    </script>
+</body>
+</html>
