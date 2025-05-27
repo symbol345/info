@@ -177,7 +177,15 @@
             }
 
             else if (input === "clue" || input === "hint") {
-                typeText("file");
+                const randomNum = Math.floor(Math.random() * 3);
+                if (randomNum === 0) {
+                    typeText("file");
+                }
+                else if (randomNum === 1) {
+                    typeText("time");
+                else {
+                    typeText("symbols");
+                }
             }
 
             else if (input === "file" || input === "files" || input === "zip" || input === "codes" || input === "folder") {
@@ -230,6 +238,22 @@
 
             else if (input === "clover") {
                 typeText("violent");
+            }
+
+            else if (input === "check") {
+                typeText("TFA");
+            }
+
+            else if (input === "quaternion") {
+                typeText("researcher");
+            }
+
+            else if (input === "star") {
+                typeText("stabilizer");
+            }
+
+            else if (input === "inf") {
+                typeText("commander");
             }
 
             else if (input === "solitarian") {
