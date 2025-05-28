@@ -131,11 +131,27 @@
             }
 
             else if (input === "daniel") {
-                typeText("Z2-JJI_rdzs");
+                const randomNum = Math.floor(Math.random() * 2);
+                if (randomNum === 0) {
+                    typeText("Z2-JJI_rdzs");
+                }
+                else {
+                    typeText("can be rescued");
+                }
             }
 
-            else if (input === "rebecca" || input === "joshua" || input === "olivia" || input === "paul" || input === "noah" || input === "james" || input === "john") {
-                typeText("unknown");
+            else if (input === "rebecca" || input === "joshua" || input === "noah" || input === "john") {
+                const randomNum = Math.floor(Math.random() * 2);
+                if (randomNum === 0) {
+                    typeText("lost cause");
+                }
+                else {
+                    typeText("cannot be rescued");
+                }
+            }
+
+            else if (input === "olivia" || input === "paul" || input === "james") {
+                typeText("can be rescued");
             }
 
             else if (input === "victim 1") {
@@ -340,6 +356,34 @@
 
             else if (input === "qsc98" || input === "qsc" || input === "98" || input === "q") {
                 typeText("Not helpful", "minecraft");
+            }
+
+            else if (input === "labyrinth") {
+                typeText("maze based off victim");
+            }
+
+            else if (input === "regenerating static") {
+                typeText("removable");
+            }
+
+            else if (input === "answer" || input === "answers") {
+                typeText("quantum void");
+            }
+
+            else if (input === "creator") {
+                typeText("rebecca");
+            }
+
+            else if (input === "static troll") {
+                typeText("non-existant");
+            }
+
+            else if (input === "decay") {
+                typeText("key");
+            }
+
+            else if (input === "decaying.7z") {
+                typeText("folder of clues");
             }
 
             else {
