@@ -114,20 +114,19 @@
         <div id="result"></div>
     </div>
 
-    <script>function checkCode() {
+    <script>
+        function checkCode() {
             const input = document.getElementById("codeInput").value.trim().toLowerCase();
             const resultBox = document.getElementById("result");
 
             if (input === "wither" || input === "witherstorm345" || input === "345" || input === "witherstorm") {
                 typeText("3rd victim");
             }
-
             else if (input === "345's parents") {
                 typeText("manipulated")
             }
-
             else if (input === "new episode" || input === "new episode?" || input === "new episode today" || input === "new episode today?") {
-                typeText("most likely not");
+                typeText("not in a week");
             }
 
             else if (input === "rebecca being delri") {
@@ -402,6 +401,10 @@
                 typeText("incorrect input. try looking for clues");
             }
         }
+
+        /*
+         creator being delri and creator being rebecca does not mean rebecca is delri, it means something else.
+        */
 
         function typeText(text, ...cssClasses) {
             const resultBox = document.getElementById("result");
