@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Decode</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        select, textarea, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 1em;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #1f1f1f;
+            color: white;
+        }
+
+        @font-face {
+            font-family: 'Minecraft';
+            src: url('fonts/3_Minecraft-Bold.otf') format('opentype');
+        }
+
+        .minecraft {
+            font-family: 'Minecraft', sans-serif;
+            color: #ff0000;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+        }
+
+        .minecrafttop {
+            font-family: 'Minecraft', sans-serif;
+            color: #FFFFFF;
+            font-size: 1.5em;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        textarea {
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <h2 class="minecrafttop">decryption</h2>
+
+    <!-- Cipher Type Dropdown -->
+    <select id="cipherType" onchange="toggleKeyDropdowns()">
+        <option value="vigenere">VIGENERE</option>
+        <option value="caesar">CAESAR</option>
+    </select>
+
+    <!-- Vigenere Key Dropdown -->
+    <select id="vigenereKeys">
+        <option value="heart">HEART</option>
+        <option value="spade">SPADE</option>
+        <option value="diamond">DIAMOND</option>
+        <option value="clover">CLOVER</option>
+        <option value="delri">DELRI</option>
+        <option value="divinex">DIVINE X</option>
+        <option value="check">CHECK</option>
+        <option value="quaternion">QUATERNION</option>
+        <option value="star">STAR</option>
+    </select>
+
+    <!-- Caesar Shift Input -->
+    <input type="number" id="caesarShift" placeholder="Enter Caesar shift" style="display: none; width: 300px;">
+
+    <textarea id="ciphertext" placeholder="enter encrypted text..."></textarea>
+    <button onclick="decrypt()">Decrypt</button>
+    <button onclick="bruteForce()" id="bruteForceBtn" style="display: none;">Brute Force</button>
+    <div id="output" style="white-space: pre-wrap;"></div>
+
+
+
+    <script>
+        function toggleKeyDropdowns() {
+            const cipherType = document.getElementById("cipherType").value;
+            document.getElementById("vigenereKeys").style.display = cipherType === "vigenere" ? "inline-block" : "none";
+            document.getElementById("caesarShift").style.display = cipherType === "caesar" ? "inline-block" : "none";
+            document.getElementById("bruteForceBtn").style.display = cipherType === "caesar" ? "inline-block" : "none";
+        }
+
+        function decrypt() {
+            const cipherType = document.getElementById("cipherType").value;
+            const ciphertext = document.getElementById("ciphertext").value.toLowerCase();
+            let result = '';
+
+            if (cipherType === "vigenere") {
+                const key = document.getElementById('vigenereKeys').value.toLowerCase();
+                let j = 0;
+                for (let i = 0; i < ciphertext.length; i++) {
+                    const c = ciphertext[i];
+                    if (c >= 'a' && c <= 'z') {
+                        const shift = key[j % key.length].charCodeAt(0) - 97;
+                        const decrypted = String.fromCharCode((c.charCodeAt(0) - 97 - shift + 26) % 26 + 97);
+                        result += decrypted;
+                        j++;
+                    } else {
+                        result += c;
+                    }
+                }
+            } else if (cipherType === "caesar") {
+                const shift = parseInt(document.getElementById("caesarShift").value);
+                if (isNaN(shift)) {
+                    result = "Enter a valid Caesar shift number.";
+                } else {
+                    for (let i = 0; i < ciphertext.length; i++) {
+                        const c = ciphertext[i];
+                        if (c >= 'a' && c <= 'z') {
+                            const decrypted = String.fromCharCode((c.charCodeAt(0) - 97 - shift + 26) % 26 + 97);
+                            result += decrypted;
+                        } else {
+                            result += c;
+                        }
+                    }
+                }
+            }
+
+            document.getElementById("output").textContent = result;
+        }
+
+        function bruteForce() {
+            const ciphertext = document.getElementById("ciphertext").value.toLowerCase();
+            let result = "";
+
+            for (let shift = 1; shift < 26; shift++) {
+                let decrypted = "";
+                for (let i = 0; i < ciphertext.length; i++) {
+                    const c = ciphertext[i];
+                    if (c >= 'a' && c <= 'z') {
+                        decrypted += String.fromCharCode((c.charCodeAt(0) - 97 - shift + 26) % 26 + 97);
+                    } else {
+                        decrypted += c;
+                    }
+                }
+                result += `Shift ${shift}: ${decrypted}\n\n`;
+            }
+
+            document.getElementById("output").textContent = result;
+        }
+
+        window.onload = toggleKeyDropdowns;
+    </script>
+
+
+
+</body>
+</html>
