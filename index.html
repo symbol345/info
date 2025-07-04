@@ -325,6 +325,10 @@
                 typeText("commander");
             }
 
+            else if (input === "redacted") {
+                typeText("forgotten");
+            }
+
             else if (input === "solitarian") {
                 typeText("entity species");
             }
@@ -342,10 +346,10 @@
             else if (input === "symbols" || input === "symbolfolk" || input === "symbol") {
                 const randomNum = Math.floor(Math.random() * 2);
                 if (randomNum === 0) {
-                    typeText("delri, x, divine x, check, quaternion, star, inf");
+                    typeText("delri, x, divine x, check, quaternion, star, inf, redacted");
                 }
                 else {
-                    typeText("⨌, ⨷, ⨱, ✓, ⨖, ⁜, ∞");
+                    typeText("⨌, ⨷, ⨱, ✓, ⨖, ⁜, ∞, ◩");
                 }
             }
 
